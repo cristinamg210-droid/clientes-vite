@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clientes</title>
+  </head>
+  <body>
+    <main class="container">
+      <h1>Clientes</h1>
+
+      <!-- Se muestra mientras JavaScript descarga y prepara el JSON. -->
+      <div id="spinner" class="spinner" role="status" aria-label="Cargando clientes"></div>
+      <p id="mensaje">Cargando clientes...</p>
+
+      <!-- El checkbox funciona como switch: apagado muestra tabla,
+           encendido muestra la cuadrícula de tarjetas. -->
+      <div class="view-control">
+        <span id="etiquetaTabla">Tabla</span>
+        <label class="switch">
+          <input
+            id="cambiarVista"
+            type="checkbox"
+            role="switch"
+            aria-label="Cambiar a vista de cuadrícula"
+            aria-describedby="etiquetaTabla etiquetaCuadricula"
+          />
+          <span class="switch-slider" aria-hidden="true"></span>
+        </label>
+        <span id="etiquetaCuadricula">Cuadrícula</span>
+      </div>
+
+      <!-- main.js crea aquí la tabla o las tarjetas según el switch. -->
+      <section id="contenedorClientes" aria-label="Listado de clientes"></section>
+    </main>
+
+    <!-- Carga el JavaScript como módulo de Vite. -->
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
